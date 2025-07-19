@@ -1,0 +1,223 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  color: #1f2937;
+  min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+  max-width: 600px;
+  margin: 60px auto;
+  padding: 40px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #4f46e5;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 1.1rem;
+  color: #4b5563;
+  margin-bottom: 30px;
+}
+
+.nav-buttons,
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 25px;
+}
+
+.button {
+  padding: 12px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  background: linear-gradient(to right, #3b82f6, #9333ea);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  text-decoration: none;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  background: linear-gradient(to right, #4338ca, #7e22ce);
+}
+
+.button:active {
+  transform: scale(0.97);
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #374151;
+  text-align: left;
+}
+
+input[type="number"],
+select {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 15px;
+  transition: border 0.2s;
+}
+
+input[type="number"]:focus,
+select:focus {
+  border-color: #6366f1;
+  outline: none;
+}
+
+.subject-row,
+.semester-input {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.subject-row > label,
+.semester-input > label {
+  flex: 1 1 45%;
+}
+
+.result {
+  margin-top: 30px;
+  padding: 15px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  background: #ecfdf5;
+  color: #059669;
+  border-radius: 10px;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #3b82f6;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+body.dark {
+  background: #111827;
+  color: #f3f4f6;
+}
+
+body.dark .container {
+  background: #1f2937;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .button {
+  background: linear-gradient(to right, #4f46e5, #9333ea);
+  color: white;
+}
+
+body.dark .button:hover {
+  background: linear-gradient(to right, #6366f1, #a855f7);
+}
+
+body.dark input,
+body.dark select {
+  background-color: #374151;
+  color: #f3f4f6;
+  border-color: #4b5563;
+}
+
+body.dark .result {
+  background: #064e3b;
+  color: #d1fae5;
+}
+
+body.dark .back-link {
+  color: #60a5fa;
+}
+
+.toggle-wrapper {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 100;
+}
+
+.toggle-checkbox {
+  display: none;
+}
+
+.toggle-label {
+  display: block;
+  width: 40px;
+  height: 22px;
+  background: #4b5563;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-label::before {
+  content: "";
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background: #f9fafb;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: 0.3s;
+}
+
+.toggle-checkbox:checked + .toggle-label::before {
+  transform: translateX(18px);
+}
+
+.toggle-checkbox:checked + .toggle-label {
+  background: #9ca3af;
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin: 30px 15px;
+    padding: 30px 20px;
+  }
+
+  .subject-row > label,
+  .semester-input > label {
+    flex: 1 1 100%;
+  }
+
+  .button {
+    width: 100%;
+  }
+}
